@@ -33,10 +33,10 @@ jobs:
         run: pip install pipenv
 
       - name: Install dependencies
-        run: pipenv install
+        run: pipenv install --dev
 
-      - name: Install development dependencies
-        run: pipenv sync --dev
+      - name: Install flake8
+        run: pipenv run pip install flake8==6.0.0
 
       - name: Run lint
         run: pipenv run lint
